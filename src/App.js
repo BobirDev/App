@@ -1,61 +1,55 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { SRLWrapper } from 'simple-react-lightbox';
-import { LazyLoadImage } from 'react-lazy-load-image-component';
-import 'react-lazy-load-image-component/src/effects/blur.css';
+import React from "react";
+import {
+  BrowserRouter as Router,
+  Switch,
+  Route,
+  Link
+} from "react-router-dom";
 import './App.css';
 
-const App = () => {
-
-  const [image, setImage] = useState("");
-  const [result, setResult] = useState([]);
-  const ACCESS_KEY = "nKnKTDLfF-u8ty8Dvdqqkpg1TIYjQBxp91oG08Cel_k";
-  const getValue = (event) => {
-    setImage(event.target.value);
-  };
-
-  const getImages = () => {
-    const url = "https://api.unsplash.com/search/photos?page=1&query=" + image + "&client_id=" + ACCESS_KEY;
-    axios.get(url).then((response) => {
-      setResult(response.data.results);
-      console.log(response);
-    })
-  }
-
+export default function App() {
   return (
-    <SRLWrapper>
-      <>
-        <h1 className="title">📷 Reactda yozilgan Rasm qidiruv ishi</h1>
-        <div className="formSection">
-          <input 
-            type="text" 
-            name="image" 
-            placeholder="Search images..." 
-            onChange={getValue}
-          />
-          <button onClick={getImages} type="submit">Search</button>
-        </div>
+    <Router>
+      <div className="container">
+        <nav className="nav">
+          <ul>
+            <li>
+              <Link to="/" className="H" >Home</Link>
+            </li>
+            <li>
+              <Link to="/about" className="A" >About</Link>
+            </li>
+            <li>
+              <Link to="/blog" className="B" >Blog</Link>
+            </li>
+          </ul>
+        </nav>
 
-        <div className="result"> 
-          {result.map((image, id) => (
-            <div className="card" key={image.id}>
-              
-                
-                <LazyLoadImage
-                  className="resultImage"
-                  src={image.urls.full}
-                  effect="blur"
-                  delayTime="300"
-                />
-                
-                <p className="username">Photo by {image.user.name}</p>
-             
-            </div>
-          ))}
-        </div>
-      </>
-    </SRLWrapper>
+        <Switch>                                                                                                                                                
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/blog">
+            <Blog />
+          </Route>
+          <Route path="/">
+            <Home />
+          </Route>
+        </Switch>
+      </div>
+    </Router>
   );
-};
+}
 
-export default App;
+function Home() {
+  return <h2>Assalomu aleykum hush kelibsiz!</h2>;
+}
+
+function About() {
+  return <h2>About pages</h2>;
+}
+
+function Blog() {
+  return <h2>Blog pages</h2>;
+  
+}

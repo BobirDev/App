@@ -1,69 +1,51 @@
-.formSection{
-  display: flex;
-  justify-content: center;
+.container{
+  background-color:  transparent;
+  background-image: linear-gradient(135deg, #492cdd 0%, #AD38E2 100%);
+  width: 100%;
+  height: 615px;
 }
-.formSection > input{
-  font-size: 20px;
-  padding: 0 1rem;
-  line-height: 2rem;
-  border-radius: 50px;
-  background-color: #fff;
-  margin-right: 20px;
+.nav{
+ width: 80%;
+ margin: auto;
+ padding: 35px 0;
+ display: flex;
+ align-items: center;
+ justify-content: right;
+ 
 }
-.formSection > button{
-  font-size: 20px;
-  padding: 0 1rem;
-  line-height: 2rem;
-  border-radius: 50px;
-  background-color: #000;
-  color: #00ffff;
+.nav ul li{
+  list-style: none;
+  display: inline-block;
+  margin: 0 15px;
 }
-
-.title{
-  font-family: system-ui, sans-serif;
-  text-align: center;
-}
-
-.result{
-  padding: 90px;
-  display: grid;
-  grid-template-columns: auto auto auto;
-}
-.result > .card{
-  display: flex;
-}
-.card > a > span > .resultImage{
-  flex: 100% 1;
-  margin-top: 1rem;
+.H{
+  text-decoration: none;
+  background: linear-gradient(90deg,#A32CDF,#106AD2);
+  padding: 6px 18px;
   border-radius: 20px;
-  width: 350px;
-  padding: 10px;
-  cursor: pointer;
+  border-color: #fff;
+  border-style: double;
+  color: #fff;
 }
-.card > a > .username{
-  text-align: center;
-  font-family: system-ui, sans-serif;
+.A{
+  text-decoration: none;
+  background: linear-gradient(90deg,#A32CDF,#106AD2);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border-color: #fff;
+  border-style: double;
+  color: #fff;
 }
-
-
-
-@media screen and (max-width: 501px){
-  .title{
-       font-size: 27px;
-  }
-  .formSection > input{
-       width: 50%;
-       font-size: 15px;
-  }
-  .formSection > button{
-       font-size: 15px;
-  }
-  .result{
-       display: grid;
-       grid-template-columns: auto;
-       padding: 0;
-  }
-  .card > a > span > .resultImage{
-       width: 93%!important;
-  }
+.B{
+  text-decoration: none;
+  background: linear-gradient(90deg,#A32CDF,#106AD2);
+  padding: 6px 18px;
+  border-radius: 20px;
+  border-color: #fff;
+  border-style: double;
+  color: #fff;
+}
+.div{
+  background-color: brown;
+  padding: 30px;
 }
